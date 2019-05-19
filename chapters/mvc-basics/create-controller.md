@@ -32,7 +32,7 @@ localhost:5000/Home/Contact -> Contact()
 
 ASP.NET Core 中有几个惯例（常见的模式），比如这个 `FooController` 映射到 `/Foo` 的模式，还有 `Index` 的 action名 可以在 URL 里省略。如果你有需要，可以自定义这些行为，不过就目前的情况，让我们暂且遵循这些惯例。
 
-在 `TodoController` 里，添加一个名为 `Index` 的 action，把那句 `// Actions go here` 注释替换掉：
+在 `TodoController` 里，添加一个名为 `Index` 的 action，把那句 `// 在这里添加 Actions` 注释替换掉：
 
 ```csharp
 public class TodoController : Controller
