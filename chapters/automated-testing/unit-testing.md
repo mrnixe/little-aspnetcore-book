@@ -1,6 +1,6 @@
 ## 单元测试
 
-单元测试是短小的测试，检查单个方法或类的行为。当你测试的代码依赖其它方法或类时，单元测试依赖于 **虚构(mocking)** 出来的其它类，以便在一个时时刻专注在一个点上。
+单元测试是短小的测试，检查单个方法或类的行为。当你测试的代码依赖其它方法或类时，单元测试依赖于 **虚构(mocking)** 出来的其它类，以便在一个时刻专注在一个点上。
 
 例如，`TodoController` 有两个依赖： `ITodoItemService` 和 `UserManager`。`TodoItemService` 接下来又依赖于 `ApplicationDbContext`。（你可以画一条线表示 `TodoController` > `TodoItemService` > `ApplicationDbContext`，这种方式被称为 **依赖图**）。
 
