@@ -76,7 +76,7 @@ cd ..
 git init
 ```
 
-请确保你添加了一个 `.gitignore` 文件用以忽略 `bin` 和 `obj` 这些目录。 GitHub 上 gitignore 模板仓库（https://github.com/github/gitignore）里的 Visual Studio gitignore 模板就很好用。
+请确保你添加了一个 `.gitignore` 文件用以忽略 `bin` 和 `obj` 这些目录。 GitHub 上 gitignore 模板仓库（ https://github.com/github/gitignore ）里的 Visual Studio gitignore 模板就很好用。
 
 还有很多值得研究的内容，让我们着手构建这个应用吧！
 

@@ -22,12 +22,11 @@ namespace AspNetCoreTodo.Controllers
 }
 ```
 
-由控制器本身处理的路由叫 **action** ，在控制器类里用方法表示。比如，`HomeController` 包含三个 action 方法（`Index`，`About`，和 `Contact`），由 ASP.NET Core 分别映射到如下的 URL：
+由控制器本身处理的路由叫 **action** ，在控制器类里用方法表示。比如，`HomeController` 包含三个 action 方法（`Index`，`Privacy`，和 `Error`），由 ASP.NET Core 分别映射到如下的 URL：
 
 ```text
 localhost:5000/Home         -> Index()
-localhost:5000/Home/About   -> About()
-localhost:5000/Home/Contact -> Contact()
+localhost:5000/Home/Privacy -> Privacy()
 ```
 
 ASP.NET Core 中有几个惯例（常见的模式），比如这个 `FooController` 映射到 `/Foo` 的模式，还有 `Index` 的 action名 可以在 URL 里省略。如果你有需要，可以自定义这些行为，不过就目前的情况，让我们暂且遵循这些惯例。

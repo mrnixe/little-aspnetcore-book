@@ -14,11 +14,11 @@ public class TodoController : Controller
 
     public IActionResult Index()
     {
-    // 从数据库获取 to-do 条目
+        // Get to-do items from database
 
-    // 把条目置于 model 中
+        // Put items into a model
 
-    // 使用 model 渲染视图
+        // Pass the view to a model and render
     }
 }
 ```
@@ -50,7 +50,7 @@ public IActionResult Index()
 
 当你编写代码访问数据库或者外部 API 服务的时候，`Task` 模式是很常见的，因为在数据库（或者网络）响应之前，它不可能给出实际的结果。如果你在 JavaScript 或者其它语言里使用过 promise 或者 回调函数，`Task` 与之如出一辙：承诺你，肯定会给出一个结果——在未来的某个时候。
 
-> 如果你在老式 JavaScript 里应付过 “回调地狱”，那你现在走运了。在 .NET 里使用 `Task` 跟异步代码打交道要容易得多，这归功于神奇的关键字 `await`。 `await` 把代码暂停在 异步(async) 操作上，而后，在底层数据库或者网络请求结束时，从暂停的地方恢复执行。就是说，你的程序并没有卡住或者阻塞住，因为它可以处理其它的请求。如果现在想不通也别担心，跟着做下去就行！
+> 如果你在老式 JavaScript 里应付过 “回调地狱”，那你现在走运了。在 .NET 里使用 `Task` 跟依附代码打交道要容易得多，这归功于神奇的关键字 `await`。 `await` 把代码暂停在 异步(async) 操作上，而后，在底层数据库或者网络请求结束时，从暂停的地方恢复执行。就是说，你的程序并没有卡住或者阻塞住，因为它可以处理其它的请求。如果现在想不通也别担心，跟着做下去就行！
 
 目前的重点就是修改 `Index` 方法的签名，以返回一个 `Task<IActionResult>`，代替之前的 `IActionResult`，并标记为 `async`：
 
@@ -89,8 +89,6 @@ services.AddSingleton<ITodoItemService, FakeTodoItemService>();
 ```
 
 这一行告知 ASP.NET Core，在任何时候，只要 `ITodoItemService` 被一个构造函数（或其它什么地方）被请求，就用这个 `FakeTodoItemService`。
-
->【译者补充】这个时候需要startup.cs文件中添加`using AspNetCoreTodo.Services`
 
 `AddSingleton` 把你的服务作为 **singleton** 添加进服务容器。这意味着，只有一个`FakeTodoItemService`的实例被创建，并在每次被请求的时候都被复用。在后面，当你写另一个服务去跟数据库交互时，你会采用一个不同的方式（叫做 **scoped**）。我会在 *运用数据库* 一章里说明原因。
 

@@ -20,7 +20,7 @@ using Microsoft.AspNetCore.Authorization;
 
 试着运行程序并在未登录的情况下访问 `/todo`。你会被自动重定向到登录页面：
 
-> 尽管属性的名字是授权(Authorize)，我们在这里检查的其实是认证(authorization)，而非检查授权，很抱歉会有这样的混淆。
+> 尽管属性的名字是授权(Authorize)，我们在这里检查的其实是认证(authentication)，而非检查授权，很抱歉会有这样的混淆。
 
 ---
 
